@@ -10,7 +10,7 @@ To begin tracking, typically after the visitor has given their consent, call `th
 
 ⚠️ No tracking will take place if `this.$enableGtagTracking()` is not called!
 
-The rest of the lib behavior remains intact. `this.$gtag(...)` can even be called before `this.$enableGtagTracking()` without errors, and without loss of events.
+The rest of the lib behavior remains intact. `this.$gtag(...)` can even be called before `this.$enableGtagTracking()` without errors or loss of events.
 
 The original documentation follows.
 
