@@ -72,6 +72,8 @@ The module includes Google `googletagmanager.com/gtag/js` into your project and 
 ```
 ## Usage
 
+This module inlcudes Google gtag in your NuxtJs project and enables every page tracking by default. You can use gtag inside of your components/functions/methods like follow:
+
 ```
   this.$gtag('event', 'your_event', { /* track something awesome */})
 ```
