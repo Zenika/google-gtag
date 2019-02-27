@@ -1,5 +1,5 @@
 {
-  "name": "@nuxtjs/google-gtag",
+  "name": "@zenika/nuxtjs-google-gtag",
   "version": "1.0.4",
   "description": "Google GTag for Nuxt.js",
   "license": "MIT",
@@ -9,7 +9,7 @@
     }
   ],
   "main": "lib/module.js",
-  "repository": "https://github.com/https://github.com/nuxt-community/google-gtag",
+  "repository": "https://github.com/Zenika/nuxtjs-google-gtag",
   "publishConfig": {
     "access": "public"
   },
