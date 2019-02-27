@@ -1,3 +1,19 @@
+# @zenika/nuxtjs-google-gtag
+
+This is a fork of [@nuxtjs/google-gtag](https://github.com/nuxt-community/google-gtag).
+
+With the original lib, the gtag script tag is added through the nuxt config and rendered on the server-side. This is problematic because it means gtag is unconditionally run on the client, even though it adds a cookie on the visitor's computer without their consent, which is illegal in the European Union.
+
+With this fork, the client-side application can control when the gtag script is added to the page, enabling the application developper to correctly implement the law.
+
+To begin tracking, typically after the visitor has given their consent, call `this.$enableGtagTracking()` in any component.
+
+⚠️ No tracking will take place if `this.$enableGtagTracking()` is not called!
+
+The rest of the lib behavior remains intact. `this.$gtag(...)` can even be called before `this.$enableGtagTracking()` without errors, and without loss of events.
+
+The original documentation follows.
+
 # @nuxtjs/google-gtag
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/google-gtag/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/google-gtag)
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/google-gtag.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/google-gtag)
@@ -55,24 +71,6 @@ The module includes Google `googletagmanager.com/gtag/js` into your project and 
 }
 ```
 ## Usage
-If you want to enable Google Tag, you need to call the ` enableGtagTracking ` function in your app.
-
-Either by the mounted call of the main component of your app, either by a test condition where you want in your app.
-
-The call has this syntax:
-
-``` this.$enableGtagTracking()```
-Example:
-
-After the user has click the YES button on our cookies disclaimer we can do that:
-```js
-methods: {
-    cookieClickedAccept() {
-        this.$enableGtagTracking()
-    },
-},
-```
-After this required step, this module inlcudes Google gtag in your NuxtJs project and enables every page tracking by default. You can use gtag inside of your components/functions/methods like follow:
 
 ```
   this.$gtag('event', 'your_event', { /* track something awesome */})
